@@ -1,9 +1,7 @@
 #' @export
-foo <- function(x) {
-  x <- substitute(x)
-  if (!is.character(x)) x <- insight::safe_deparse(x)
+foo <- function() {
   tryCatch({
-    subset(mtcars, subset = eval(parse(text = x)))
+    if (c(TRUE, TRUE) || c(TRUE, TRUE)) 1
   },
   warning = function(w) NULL,
   error = function(e) NULL
